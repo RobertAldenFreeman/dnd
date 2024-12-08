@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Smith - D&D Character Sheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with Character Image -->
+        <div class="header">
+            <img src="character.jpg" alt="Joseph Smith" class="character-image" />
+            <h1>Joseph Smith</h1>
+            <h2>Level 4 Warlock</h2>
+        </div>
+
+        <!-- Core Stats Section -->
+        <div class="section">
+            <h3>Core Stats</h3>
+            <div class="stat-container">
+                <label for="ac">Armor Class (AC):</label>
+                <input type="number" id="ac" value="13" />
+            </div>
+            <div class="stat-container">
+                <label for="spell-save-dc">Spell Save DC:</label>
+                <input type="number" id="spell-save-dc" readonly />
+            </div>
+            <div class="stat-container">
+                <label for="spell-slot-level">Spell Slot Level:</label>
+                <input type="number" id="spell-slot-level" readonly />
+            </div>
+            <div class="stat-container">
+                <label for="spell-slot-count">Available Spell Slots:</label>
+                <input type="number" id="spell-slot-count" readonly />
+            </div>
+            <div class="stat-container">
+                <label for="proficiency-bonus">Proficiency Bonus:</label>
+                <input type="number" id="proficiency-bonus" readonly />
+            </div>
+        </div>
+
+        <!-- Dice Rolling Section -->
+        <div class="section">
+            <h3>Dice Rolling Widget</h3>
+            <div class="dice-widget">
+                <label for="num-dice">Number of Dice:</label>
+                <input type="number" id="num-dice" value="1" min="1" />
+                <button class="roll-dice" data-dice="4">Roll d4</button>
+                <button class="roll-dice" data-dice="6">Roll d6</button>
+                <button class="roll-dice" data-dice="8">Roll d8</button>
+                <button class="roll-dice" data-dice="10">Roll d10</button>
+                <button class="roll-dice" data-dice="12">Roll d12</button>
+                <button class="roll-dice" data-dice="20">Roll d20</button>
+                <button class="roll-dice" data-dice="100">Roll d100</button>
+            </div>
+            <p>Roll Results:</p>
+            <ul id="dice-results">
+                <!-- Results will be dynamically added here -->
+            </ul>
+        </div>
+
+        <!-- Health Section -->
+        <div class="section">
+            <h3>Health</h3>
+            <div class="slider-container">
+                <label for="health">Current HP:</label>
+                <input type="range" id="health" class="slider" min="0" max="31" value="31" />
+                <p>Current HP: <span id="current-hp-display">31</span>/31</p>
+            </div>
+            <div class="slider-container">
+                <label for="temp-hp">Temporary HP:</label>
+                <input type="number" id="temp-hp" value="0" min="0" />
+                <p>Effective HP: <span id="effective-hp-display">31</span></p>
+            </div>
+        </div>
+
+        <!-- Proficiencies Section -->
+        <div class="section">
+            <h3>Proficiencies</h3>
+            <ul>
+                <li><strong>Saving Throws:</strong> Wisdom, Charisma</li>
+                <li><strong>Skills:</strong> Arcana, Deception, History, Intimidation</li>
+                <li><strong>Armor:</strong> Light Armor</li>
+                <li><strong>Weapons:</strong> Simple Weapons</li>
+                <li><strong>Tools:</strong> None</li>
+                <li><strong>Languages:</strong> Common, Infernal</li>
+            </ul>
+        </div>
+
+        <!-- Ability Scores Section -->
+        <div class="section">
+            <h3>Ability Scores</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ability</th>
+                        <th>Score</th>
+                        <th>Modifier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Strength</td>
+                        <td><input type="number" id="str" value="8" /></td>
+                        <td id="str-mod">-1</td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity</td>
+                        <td><input type="number" id="dex" value="16" /></td>
+                        <td id="dex-mod">+3</td>
+                    </tr>
+                    <tr>
+                        <td>Constitution</td>
+                        <td><input type="number" id="con" value="15" /></td>
+                        <td id="con-mod">+2</td>
+                    </tr>
+                    <tr>
+                        <td>Intelligence</td>
+                        <td><input type="number" id="int" value="8" /></td>
+                        <td id="int-mod">-1</td>
+                    </tr>
+                    <tr>
+                        <td>Wisdom</td>
+                        <td><input type="number" id="wis" value="10" /></td>
+                        <td id="wis-mod">+0</td>
+                    </tr>
+                    <tr>
+                        <td>Charisma</td>
+                        <td><input type="number" id="cha" value="20" /></td>
+                        <td id="cha-mod">+5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Spells and Cantrips Section -->
+        <div class="section">
+            <h3>Spells & Cantrips</h3>
+            <ul>
+                <li><strong>Cantrips:</strong></li>
+                <ul>
+                    <li><strong>Eldritch Blast:</strong> A ranged spell attack dealing 1d10 force damage. Enhanced by Agonizing Blast to add Charisma modifier to damage.</li>
+                    <li><strong>Mage Hand:</strong> Create a spectral floating hand to manipulate objects within 30 feet.</li>
+                    <li><strong>Prestidigitation:</strong> Minor magical effects such as cleaning, warming, or sensory displays.</li>
+                    <li><strong>Guidance:</strong> Add 1d4 to a creature’s ability check within 1 minute.</li>
+                    <li><strong>Sacred Flame:</strong> Target a creature with radiant fire dealing 1d8 radiant damage. Dex save negates.</li>
+                    <li><strong>Shillelagh:</strong> Imbue a club or quarterstaff to deal magical damage using Wisdom for attack rolls.</li>
+                </ul>
+                <li><strong>Level 2 Spells:</strong></li>
+                <ul>
+                    <li><strong>Misty Step:</strong> Teleport up to 30 feet as a bonus action.</li>
+                    <li><strong>Hellish Rebuke:</strong> Deal 2d10 fire damage as a reaction to being hit.</li>
+                    <li><strong>Arms of Hadar:</strong> Summon dark tendrils to deal 2d6 necrotic damage to creatures in 10 feet, preventing reactions.</li>
+                    <li><strong>Mirror Image:</strong> Create illusory duplicates to make it harder for enemies to hit you.</li>
+                </ul>
+            </ul>
+        </div>
+
+        <!-- Background Section -->
+        <div class="section">
+            <h3>Background</h3>
+            <p>Joseph Smith is a charismatic elven warlock who once lived among scholars and adventurers. As a sage, he has studied ancient lore and seeks knowledge and power to fulfill his pact with his fiendish patron. Known for his eloquence, he uses his charm and wit to inspire and manipulate others to further his goals.</p>
+        </div>
+
+        <!-- Notes Section -->
+        <div class="section">
+            <h3>Notes</h3>
+            <textarea rows="5" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd;">Example Note: Joseph prioritizes ranged combat and support through spells like Eldritch Blast and Guidance. He avoids direct confrontation and uses Misty Step to escape danger.</textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
